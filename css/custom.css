@@ -1,0 +1,121 @@
+/* ---- Fonts ---- */
+
+@font-face {
+    font-family: Edensor;
+    src:url("/fonts/Edensor.otf");
+}
+@font-face {
+    font-family: Avenir-UltraLight;
+    src:url("/fonts/CooperHewitt-Thin.ttf");
+}
+
+/* ---- Global ---- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EDE7DB;
+}
+
+.page-wrapper {
+    width: 95%;
+    height: 95%;
+    position: relative;
+}
+
+/* ---- Main ---- */
+
+.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre horizontalement et verticalement */
+    text-align: center;
+}
+
+.main-title p {
+  font-family: Edensor;
+    font-size: 4rem;
+    color: black;
+}
+
+.main-title img {
+  width: 3rem;
+}
+
+/* ---- Menu ---- */
+
+.menu {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.menu ul {
+    list-style-type: none; /* Enlève les puces des items de la liste */
+}
+
+.menu li {
+    margin-top: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: Avenir-UltraLight;
+    font-size: 1rem;
+    color: black;
+}
+
+.menu a:hover {
+    color: gray;
+}
+
+/* ---- Logo ---- */
+
+.logo {
+  position: fixed;
+  bottom: 3.2rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.logo-image {
+  width: 2rem;
+}
+
+/* ---- Animations ---- */
+
+@keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.main-animation-1 {
+    animation: fade-out 1s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.main-animation-2 {
+    opacity: 0;
+    animation: fade-out 1s ease;
+    animation-delay: 2s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+.main-animation-3 {
+    opacity: 0;
+    animation: fade-out 1s ease;
+    animation-delay: 3s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
