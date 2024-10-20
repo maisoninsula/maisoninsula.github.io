@@ -18,7 +18,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,15 +26,18 @@ body {
 }
 
 .page-wrapper {
-    width: 95%;
-    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centre verticalement le contenu */
+    height: 100%; /* Prend toute la hauteur de la fenêtre */
+    width: 100%; /* Prend toute la hauteur de la fenêtre */
     position: relative;
 }
 
 /* ---- Main ---- */
 
 .main-title {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centre horizontalement et verticalement */
@@ -42,25 +45,25 @@ body {
 }
 
 .main-title p {
-  font-family: Edensor;
+    font-family: Edensor;
     font-size: 4rem;
     color: black;
 }
 
 .main-title img {
-  width: 3rem;
+    width: 3rem;
 }
 
 /* ---- Menu ---- */
 
 .menu {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    position: fixed;
+    bottom: 3rem;
+    left: 3rem;
 }
 
 .menu ul {
-    list-style-type: none; /* Enlève les puces des items de la liste */
+    list-style-type: none;
 }
 
 .menu li {
@@ -82,13 +85,51 @@ body {
 
 .logo {
   position: fixed;
-  bottom: 3.2rem;
+  bottom: 3.4rem;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
 .logo-image {
   width: 2rem;
+}
+
+/* ---- Contenu principal ---- */
+
+.content {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 57%;
+    height: 55%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.text-block {
+    width: 45%;
+    text-align: right;
+    font-family: Avenir-UltraLight;
+    font-size: 0.9rem;
+    color: black;
+    line-height: 1.4;
+    padding-left: 8%;
+    padding-right: 4%;
+}
+
+.image-block {
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ---- Animations ---- */
