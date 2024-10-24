@@ -132,6 +132,35 @@ body {
     object-fit: cover;
 }
 
+/* ---- Projects Scroll View ---- */
+
+.projects-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+
+    /* Cacher la barre de scroll */
+    scrollbar-width: none; /* Pour Firefox */
+    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+}
+
+.projects-container::-webkit-scrollbar {
+    display: none; /* Pour Chrome, Safari et Opera */
+}
+
+.project {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+}
+
+.project-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
 /* ---- Animations ---- */
 
 @keyframes fade-out {
