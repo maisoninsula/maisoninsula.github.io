@@ -16,17 +16,19 @@
 
   <body>
     <div class="page-wrapper">
-      <nav class="menu">
-        <ul>
-          <li><a href="/projects.html">Projets</a></li>
-          <li><a href="/about.html">À propos</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
+        <div class="menu-burger" onclick="toggleMenu()">☰</div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="/projects.html">Projets</a></li>
+                <li><a href="/about.html">À propos</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-      <div class="logo">
-          <img src="images/logo.svg" alt="Logo Maison Insula" class="logo-image">
-      </div>
+        <div class="logo">
+            <img src="images/logo.svg" alt="Logo Maison Insula" class="logo-image">
+        </div>
     </div>
   </body>
+  <script src="javascript/menu.js"></script>
 </html>
