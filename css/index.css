@@ -1,0 +1,58 @@
+.main-title {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre horizontalement et verticalement */
+    text-align: center;
+}
+
+.main-title p {
+    font-family: Edensor;
+    font-size: 4rem;
+    color: black;
+}
+
+.main-title img {
+    width: 3rem;
+}
+
+/* ---- Animations ---- */
+
+@keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.main-animation-1 {
+    animation: fade-out 1s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.main-animation-2 {
+    opacity: 0;
+    animation: fade-out 1s ease;
+    animation-delay: 2s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+@media (min-width: 769px) {
+    .menu {
+        opacity: 0;
+        animation: fade-out 1s ease;
+        animation-delay: 3s;
+        animation-direction: reverse;
+        animation-fill-mode: forwards;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-burger {
+        opacity: 0;
+        animation: fade-out 1s ease;
+        animation-delay: 3s;
+        animation-direction: reverse;
+        animation-fill-mode: forwards;
+    }
+}

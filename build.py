@@ -1,4 +1,5 @@
 import os
+import re
 
 def generate_projects_html(projects_directory, template_file="projects/template_projects.html", output_file="projects.html"):
     # Lecture du fichier template pour projects.html
@@ -21,18 +22,22 @@ def generate_projects_html(projects_directory, template_file="projects/template_
 
             # Vérifie l'existence de l'image principale
             if os.path.exists(image_path):
-                # Lecture du titre, s'il existe
+                # Lecture et formatage du titre
                 title = ""
                 if os.path.exists(title_path):
                     with open(title_path, "r", encoding="utf-8") as f:
-                        title = f.read().strip().upper()
+                        title = f.read().strip()
 
-                # Ajout du HTML pour chaque projet
+                # Formattage du titre pour le nom de fichier
+                formatted_title = re.sub(r'\s+', '-', title.lower())
+                formatted_title = re.sub(r'[^\w\-]', '', formatted_title)  # Supprime caractères spéciaux
+
+                # Ajout du HTML pour chaque projet en tant que lien
                 projects_content += f"""
-        <div class="project" id="{project_folder}">
+        <a href="{formatted_title}.html" class="project" id="{project_folder}">
             <h1 class="project-title">{title}</h1>
             <img src="{os.path.join('projects', project_folder, 'main_image.jpg')}" alt="{title}" class="project-image">
-        </div>
+        </a>
                 """
 
     # Remplace le marqueur dans le template par le contenu des projets
@@ -43,7 +48,6 @@ def generate_projects_html(projects_directory, template_file="projects/template_
         f.write(final_html)
 
     print(f"{output_file} généré avec succès.")
-
 
 def generate_about_html(about_directory, template_file="about/template_about.html", output_file="about.html"):
     # Lecture du fichier template pour about.html

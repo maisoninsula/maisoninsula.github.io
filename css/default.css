@@ -1,0 +1,150 @@
+/* ---- Fonts ---- */
+
+@font-face {
+    font-family: Edensor;
+    src:url("/fonts/Edensor.otf");
+}
+@font-face {
+    font-family: Avenir-UltraLight;
+    src:url("/fonts/CooperHewitt-Thin.ttf");
+}
+
+/* ---- Global ---- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EDE7DB;
+}
+
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centre verticalement le contenu */
+    height: 100%; /* Prend toute la hauteur de la fenêtre */
+    width: 100%; /* Prend toute la hauteur de la fenêtre */
+    position: relative;
+}
+
+.content {
+    margin: auto;
+}
+
+.text-block {
+    font-family: Avenir-UltraLight;
+    font-size: 0.9rem;
+    color: black;
+    line-height: 1.4;
+}
+
+/* ---- Menu ---- */
+
+@media (min-width: 769px) {
+  .menu {
+      position: fixed;
+      bottom: 3rem;
+      left: 3rem;
+  }
+
+  .menu ul {
+      list-style-type: none;
+  }
+
+  .menu li {
+      margin-top: 10px;
+  }
+
+  .menu a {
+      text-decoration: none;
+      font-family: Avenir-UltraLight;
+      font-size: 1rem;
+      color: black;
+  }
+
+  .menu a:hover {
+      color: gray;
+  }
+}
+
+/* ---- Menu burger pour petits écrans ---- */
+
+.menu-burger {
+    display: none;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .menu-burger {
+        display: block; /* Affiche l'icône burger */
+    }
+
+    .menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(237, 231, 219, 0.95); /* Couleur de fond légèrement transparente */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Ombre pour le côté gauche */
+        padding-top: 2rem;
+        transform: translateX(100%); /* Positionne le menu en dehors de l'écran */
+        transition: transform 0.3s ease; /* Animation de glissement */
+        z-index: 4;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu li {
+        margin: 1.5rem 0;
+    }
+
+    .menu a {
+        text-decoration: none;
+        font-family: Avenir-UltraLight;
+        font-size: 1.2rem;
+        color: black;
+    }
+
+    .menu a:hover {
+        color: gray;
+    }
+
+    /* Classe pour afficher le menu latéral */
+    .menu.open {
+        display: block;
+        transform: translateX(0); /* Fait glisser le menu sur l'écran */
+    }
+}
+
+
+/* ---- Logo ---- */
+
+.logo {
+  position: fixed;
+  bottom: 3.4rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.logo-image {
+  width: 2rem;
+}

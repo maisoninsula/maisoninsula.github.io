@@ -9,26 +9,27 @@
 
     <title>Maison Insula - À propos</title>
 
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="page-wrapper">
-      <div class="menu-burger" onclick="toggleMenu()">☰</div>
-      <nav class="menu" id="menu">
-          <ul>
-              <li><a href="/projects.html">Projets</a></li>
-              <li><a href="/about.html">À propos</a></li>
-              <li><a href="/contact.html">Contact</a></li>
-          </ul>
-      </nav>
-
       <div class="content">
         <div class="text-block">
           <p>
             {{ description_content }}
           </p>
         </div>
+        
+        <div class="menu-burger" onclick="toggleMenu()">☰</div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li><a href="/projects.html">Projets</a></li>
+                <li><a href="/about.html">À propos</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
         <div class="image-block">
           <img src="about/picture.jpeg" alt="Photo de Maison Insula" class="about-image">
