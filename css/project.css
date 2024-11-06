@@ -2,64 +2,143 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100vh;
+    height: 100%;
+    top: 0%;
+    bottom: 0%;
     overflow: hidden;
 }
 
 /* ---- Description à gauche ---- */
-.project-description {
-    width: 45%;
-    padding: 2rem;
-    font-family: Avenir-UltraLight;
-    font-size: 1rem;
-    color: black;
-    line-height: 1.5;
-    overflow-y: auto;
-}
-
-/* ---- Galerie de photos scrollable à droite ---- */
-.project-gallery {
-    width: 50%;
-    right: 0%;
-    height: 100%;
-    overflow-y: scroll;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    scrollbar-width: none;
-}
-
-.project-gallery::-webkit-scrollbar {
-    display: none;
-}
-
-.project-gallery img {
-    width: 90%;
-    margin-bottom: 1.5rem;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
 .content {
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    width: 57%;
-    height: 55%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
+    width: 100%;
+    top: 0%;
+    bottom: 0%;
 }
 
 .text-block {
     width: 45%;
     text-align: right;
-    padding-left: 8%;
-    padding-right: 4%;
+    padding-left: 20%;
+    padding-bottom: 3.4rem;
     overflow-y: auto; /* Active le défilement vertical */
     max-height: 100%; /* Limite la hauteur à la taille de la fenêtre */
+}
+
+/* Conteneur principal du slider */
+.project-slider {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper des images */
+.slider-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Images du slider */
+.slider-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+/* Image active */
+.slider-image.active {
+    display: block;
+}
+
+/* Flèches de navigation */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none; /* Pour ne pas perturber les clics sur les images */
+}
+
+.slider-arrow {
+    pointer-events: auto;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+/* Lightbox overlay */
+.lightbox {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Overlay sombre */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenu du lightbox centré */
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image du lightbox ajustée */
+.lightbox-image {
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: 100%;
+    object-fit: contain; /* Garde l'image entière sans rognage */
+    display: block;
+}
+
+/* Bouton pour fermer le lightbox */
+.close-lightbox {
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+/* Flèches de navigation dans le lightbox */
+.lightbox-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.lightbox-controls .slider-arrow {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    cursor: pointer;
 }

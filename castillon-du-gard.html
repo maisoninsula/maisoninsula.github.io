@@ -15,14 +15,6 @@
 
   <body class="project-page">
     <div class="page-wrapper">
-        <!-- Menu en bas à gauche -->
-        <nav class="menu">
-            <ul>
-                <li><a href="/projects.html">Projets</a></li>
-                <li><a href="/about.html">À propos</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
-        </nav>
 
         <!-- Description à gauche -->
         <div class="content">
@@ -43,14 +35,40 @@
               Client: Privé
             </p>
           </div>
+
+          <div class="project-slider">
+              <div class="slider-wrapper">
+                  <img src="projects/project1/image1.jpg" alt="Image 1" class="slider-image active" onclick="openLightbox(0)">
+                  <img src="projects/project1/image2.jpg" alt="Image 2" class="slider-image" onclick="openLightbox(1)">
+                  <img src="projects/project1/image3.jpg" alt="Image 3" class="slider-image" onclick="openLightbox(2)">
+              </div>
+              <div class="slider-controls">
+                  <p class="slider-arrow left-arrow" onclick="prevImage()">❮</p>
+                  <p class="slider-arrow right-arrow" onclick="nextImage()">❯</p>
+              </div>
+          </div>
         </div>
 
-        <!-- Section scrollable pour les images à droite -->
-        <div class="project-gallery">
-            <img src="projects/project1/image1.jpg" alt="Project 1, Image 1">
-            <img src="projects/project1/image2.jpg" alt="Project 1, Image 2">
-            <img src="projects/project1/image3.jpg" alt="Project 1, Image 3">
+        <!-- Lightbox overlay -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <p class="close-lightbox" onclick="closeLightbox()">×</p>
+                <img src="" alt="Agrandissement de l'image" class="lightbox-image" id="lightboxImage">
+                <div class="lightbox-controls">
+                    <p class="slider-arrow left-arrow" onclick="prevLightboxImage()">❮</p>
+                    <p class="slider-arrow right-arrow" onclick="nextLightboxImage()">❯</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Menu en bas à gauche -->
+        <nav class="menu">
+            <ul>
+                <li><a href="/projects.html">Projets</a></li>
+                <li><a href="/about.html">À propos</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
         <!-- Logo centré en bas -->
         <div class="logo">
@@ -59,4 +77,5 @@
     </div>
   </body>
   <script src="javascript/menu.js"></script>
+  <script src="javascript/slider.js"></script>
 </html>
