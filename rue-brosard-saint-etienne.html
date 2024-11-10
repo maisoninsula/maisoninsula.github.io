@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Maison Insula - Rue brosard saint etienne">
+    <meta name="title" content="Maison Insula - Rue brosard saint etienne">
+
+    <title>Maison Insula - Rue brosard saint etienne</title>
+
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/project.css" rel="stylesheet">
+  </head>
+
+  <body class="project-page">
+    <div class="page-wrapper">
+
+        <!-- Description à gauche -->
+        <div class="content">
+          <div class="text-block">
+            <p>
+              Localisation: Saint Etienne
+<br>
+Surface: 100m2
+<br>
+Client: Privé
+<br><br>
+Ce projet de réaménagement visait à optimiser l’espace en ajoutant une seconde salle de bain, une buanderie et une suite parentale.
+<br>
+L’ensemble de l’appartement a été repensé, avec une inversion des pièces de vie pour les orienter côté jardin et balcon.
+<br>
+La suppression des couloirs surdimensionnés a permis de gagner en surface utile et de conserver la lumière traversante de l’appartement, tout en intégrant une buanderie.
+<br>
+Grâce à cette refonte globale, l’appartement a été transformé de manière méconnaissable, offrant désormais un espace parfaitement adapté aux besoins des clients.
+            </p>
+          </div>
+
+          <div class="project-slider">
+              <div class="slider-wrapper">
+                  <img src="projects/01.rue-brosard-saint-etienne/01.jpg" alt="Image 1" class="slider-image active" onclick="openLightbox(0)">
+<img src="projects/01.rue-brosard-saint-etienne/02.jpg" alt="Image 2" class="slider-image" onclick="openLightbox(1)">
+<img src="projects/01.rue-brosard-saint-etienne/03.jpg" alt="Image 3" class="slider-image" onclick="openLightbox(2)">
+<img src="projects/01.rue-brosard-saint-etienne/04.jpg" alt="Image 4" class="slider-image" onclick="openLightbox(3)">
+<img src="projects/01.rue-brosard-saint-etienne/05.jpg" alt="Image 5" class="slider-image" onclick="openLightbox(4)">
+<img src="projects/01.rue-brosard-saint-etienne/06.jpg" alt="Image 6" class="slider-image" onclick="openLightbox(5)">
+<img src="projects/01.rue-brosard-saint-etienne/07.jpg" alt="Image 7" class="slider-image" onclick="openLightbox(6)">
+<img src="projects/01.rue-brosard-saint-etienne/08.jpg" alt="Image 8" class="slider-image" onclick="openLightbox(7)">
+<img src="projects/01.rue-brosard-saint-etienne/09.jpg" alt="Image 9" class="slider-image" onclick="openLightbox(8)">
+<img src="projects/01.rue-brosard-saint-etienne/main_image.jpg" alt="Image 10" class="slider-image" onclick="openLightbox(9)">
+              </div>
+              <div class="slider-controls">
+                  <p class="slider-arrow left-arrow" onclick="prevImage()">❮</p>
+                  <p class="slider-arrow right-arrow" onclick="nextImage()">❯</p>
+              </div>
+          </div>
+        </div>
+
+        <!-- Lightbox overlay -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <p class="close-lightbox" onclick="closeLightbox()">×</p>
+                <img src="" alt="Agrandissement de l'image" class="lightbox-image" id="lightboxImage">
+                <div class="lightbox-controls">
+                    <p class="slider-arrow left-arrow" onclick="prevLightboxImage()">❮</p>
+                    <p class="slider-arrow right-arrow" onclick="nextLightboxImage()">❯</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu en bas à gauche -->
+        <nav class="menu">
+            <ul>
+                <li><a href="/projects.html">Projets</a></li>
+                <li><a href="/about.html">À propos</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Logo centré en bas -->
+        <div class="logo">
+            <img src="images/logo.svg" alt="Logo Maison Insula" class="logo-image">
+        </div>
+    </div>
+  </body>
+  <script src="javascript/menu.js"></script>
+  <script src="javascript/slider.js"></script>
+</html>

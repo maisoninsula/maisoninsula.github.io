@@ -8,26 +8,6 @@
     overflow: hidden;
 }
 
-/* ---- Description à gauche ---- */
-.content {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    top: 0%;
-    bottom: 0%;
-}
-
-.text-block {
-    width: 45%;
-    text-align: right;
-    padding-left: 20%;
-    padding-bottom: 3.4rem;
-    overflow-y: auto; /* Active le défilement vertical */
-    max-height: 100%; /* Limite la hauteur à la taille de la fenêtre */
-}
-
 /* Conteneur principal du slider */
 .project-slider {
     position: relative;
@@ -56,6 +36,7 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
+    cursor: pointer;
 }
 
 /* Image active */

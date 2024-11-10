@@ -6,7 +6,11 @@
 }
 @font-face {
     font-family: Avenir-UltraLight;
-    src:url("/fonts/CooperHewitt-Thin.ttf");
+    src:url("/fonts/AvenirNextCondensed-UltraLight.ttf");
+}
+@font-face {
+    font-family: Avenir-Medium;
+    src:url("/fonts/AvenirNextCondensed-Medium.ttf");
 }
 
 /* ---- Global ---- */
@@ -40,9 +44,46 @@ body {
 
 .text-block {
     font-family: Avenir-UltraLight;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: black;
     line-height: 1.4;
+}
+
+.text-block b {
+    font-family: Avenir-Medium;
+}
+
+@media (min-width: 769px) {
+    .content {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        top: 0%;
+        bottom: 0%;
+    }
+
+    .text-block {
+        width: 46%;
+        text-align: right;
+        padding-left: 15%;
+        padding-bottom: 3.3rem;
+        overflow-y: auto; /* Active le défilement vertical */
+        max-height: 100%; /* Limite la hauteur à la taille de la fenêtre */
+    }
+
+    .image-block {
+        width: 46%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .about-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 /* ---- Menu ---- */
@@ -65,7 +106,8 @@ body {
   .menu a {
       text-decoration: none;
       font-family: Avenir-UltraLight;
-      font-size: 1rem;
+      font-size: 1.3rem;
+      line-height: 1.6;
       color: black;
   }
 
@@ -140,7 +182,7 @@ body {
 
 .logo {
   position: fixed;
-  bottom: 3.4rem;
+  bottom: 4.6rem;
   left: 50%;
   transform: translate(-50%, 0%);
 }
