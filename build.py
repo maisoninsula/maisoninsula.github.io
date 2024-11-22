@@ -12,16 +12,16 @@ def generate_projects_html(projects_directory, template_file="projects/template_
         project_path = os.path.join(projects_directory, project_folder)
 
         if os.path.isdir(project_path):
-            title = project_folder.split('.', 1)[-1].replace('-', ' ').upper()
+            title = project_folder.split('.', 1)[-1].replace('-', ' ')
             formatted_title = re.sub(r'\s+', '-', title.lower())
             formatted_title = re.sub(r'[^\w\-]', '', formatted_title)
-            image_path = os.path.join(project_path, "main_image.jpg")
+            image_path = os.path.join(project_path, "01.jpg")
 
             if os.path.exists(image_path):
                 projects_content += f"""
         <a href="{formatted_title}.html" class="project" id="{project_folder}">
-            <h1 class="project-title" style="text-align: center;">{title}</h1>
-            <img src="{os.path.join('projects', project_folder, 'main_image.jpg')}" alt="{title}" class="project-image">
+            <p class="project-title" style="text-align: center;">{title}</p>
+            <img src="{os.path.join('projects', project_folder, '01.jpg')}" alt="{title}" class="project-image">
         </a>
                 """
                 generate_project_page(project_path, formatted_title, title)
@@ -45,7 +45,11 @@ def generate_project_page(project_path, formatted_title, title, template_file="p
         with open(description_file, "r", encoding="utf-8") as f:
             description = f.read().strip()
 
-    images = [img for img in sorted(os.listdir(project_path)) if img.endswith((".jpg", ".jpeg", ".png"))]
+    valid_extensions = {".jpg", ".jpeg", ".png", ".gif"}
+    images = [
+        img for img in sorted(os.listdir(project_path))
+        if os.path.splitext(img)[1].lower() in valid_extensions
+    ]
 
     slider_images_html = "\n".join(
         f'<img src="{os.path.join("projects", os.path.basename(project_path), img)}" alt="Image {i+1}" class="slider-image{" active" if i == 0 else ""}" onclick="openLightbox({i})">'

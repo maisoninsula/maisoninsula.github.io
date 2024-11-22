@@ -18,11 +18,14 @@ function nextImage() {
 }
 
 function openLightbox(index) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    currentIndex = index;
-    lightboxImage.src = images[currentIndex].src;
-    lightbox.style.display = 'flex'; // Affiche le lightbox en plein écran
+    const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+    if (isDesktop) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        currentIndex = index;
+        lightboxImage.src = images[currentIndex].src;
+        lightbox.style.display = 'flex'; // Affiche le lightbox en plein écran
+    }
 }
 
 function closeLightbox() {

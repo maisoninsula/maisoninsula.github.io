@@ -25,14 +25,14 @@
 
 .main-animation-1 {
     animation: fade-out 1s ease;
-    animation-delay: 1s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
 }
 
 .main-animation-2 {
     opacity: 0;
     animation: fade-out 1s ease;
-    animation-delay: 2s;
+    animation-delay: 3s;
     animation-direction: reverse;
     animation-fill-mode: forwards;
 }
@@ -41,7 +41,7 @@
     .menu {
         opacity: 0;
         animation: fade-out 1s ease;
-        animation-delay: 3s;
+        animation-delay: 4s;
         animation-direction: reverse;
         animation-fill-mode: forwards;
     }
@@ -51,7 +51,7 @@
     .menu-burger {
         opacity: 0;
         animation: fade-out 1s ease;
-        animation-delay: 3s;
+        animation-delay: 4s;
         animation-direction: reverse;
         animation-fill-mode: forwards;
     }

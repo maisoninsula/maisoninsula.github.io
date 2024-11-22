@@ -1,14 +1,28 @@
-.project-page .page-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: 100%;
-    top: 0%;
-    bottom: 0%;
-    overflow: hidden;
+/* Images du slider */
+.slider-image {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.mobile-container {
+    display: none;
 }
 
 /* Conteneur principal du slider */
+
+.project-title-top-right {
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    font-family: Edensor;
+    font-size: 1.5rem;
+    color: black;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
 .project-slider {
     position: relative;
     width: 45%;
@@ -27,21 +41,6 @@
     align-items: center;
     justify-content: center;
     position: relative;
-}
-
-/* Images du slider */
-.slider-image {
-    display: none;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    cursor: pointer;
-}
-
-/* Image active */
-.slider-image.active {
-    display: block;
 }
 
 /* Flèches de navigation */
@@ -122,4 +121,96 @@
     color: rgba(255, 255, 255, 0.5);
     padding: 1rem;
     cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    .project-page .page-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+        top: 0%;
+        bottom: 0%;
+        overflow: hidden;
+    }
+
+    /* Images du slider */
+    .slider-image {
+        display: none;
+        height: 100%;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    /* Image active */
+    .slider-image.active {
+        display: block;
+    }
+
+    .image-block {
+       display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-title-top-right {
+        display: none
+    }
+
+    .lightbox {
+        display: none
+    }
+
+    .project-slider {
+        display: none
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column; /* Empile le texte et l'image en colonne */
+        overflow-y: auto; /* Active le défilement vertical */
+        scrollbar-width: none; /* Cache la barre de défilement pour Firefox */
+        -ms-overflow-style: none; /* Cache la barre de défilement pour IE et Edge */
+        width: 70%;
+        height: 80%;
+        padding-top: 10%;
+        padding-bottom: 20%;
+    }
+
+    .content::-webkit-scrollbar {
+        display: none; /* Cache la barre de défilement pour Chrome, Safari et Opera */
+    }
+
+    .text-block, .image-block {
+        width: 100%; /* Chaque bloc prend toute la largeur */
+        flex-shrink: 0; /* Empêche les blocs de se redimensionner */
+    }
+
+    .slider-image {
+        display: block;
+    }
+
+    .slider-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Ajuste l'image à la largeur de l'écran sans distorsion */
+        padding-top: 5%;
+    }
+
+    .page-wrapper {
+        display: block;
+        height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+        overflow-y: scroll; /* Active le défilement */
+        scrollbar-width: none; /* Cache la barre de défilement pour Firefox */
+    }
+
+    .page-wrapper::-webkit-scrollbar {
+        display: none; /* Cache la barre de défilement pour Chrome, Safari, et Opera */
+    }
+
+    .logo {
+        position: relative; /* Permet au logo de suivre le flux de la page */
+        display: flex;
+        justify-content: center;
+    }
 }
