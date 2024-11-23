@@ -5,10 +5,12 @@
         overflow-y: auto; /* Active le défilement vertical */
         scrollbar-width: none; /* Cache la barre de défilement pour Firefox */
         -ms-overflow-style: none; /* Cache la barre de défilement pour IE et Edge */
-        width: 70%;
-        height: 80%;
-        padding-top: 10%;
-        padding-bottom: 20%;
+        width: 100%;
+        height: 100%;
+        padding-right: 3.2rem;
+        padding-left: 3.2rem;
+        padding-top: 2.4rem;
+        padding-bottom: 2.4rem;
     }
 
     .content::-webkit-scrollbar {
@@ -24,7 +26,7 @@
         width: 100%;
         height: auto;
         object-fit: cover; /* Ajuste l'image à la largeur de l'écran sans distorsion */
-        padding-top: 5%;
+        padding-top: 1rem;
     }
 
     .page-wrapper {
@@ -42,6 +44,7 @@
         position: relative; /* Permet au logo de suivre le flux de la page */
         display: flex;
         justify-content: center;
+        padding-top: 4rem;
     }
 }
 
