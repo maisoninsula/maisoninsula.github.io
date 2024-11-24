@@ -121,11 +121,43 @@ body {
 .menu-burger {
     display: none;
     position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 2rem;
+    top: 3rem;
+    right: 1.6rem;
+    width: 1.2rem;
+    height: 2rem;
     cursor: pointer;
     z-index: 5;
+}
+
+.menu-burger span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    background-color: black;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-burger span:nth-child(2) {
+    top: 0.4rem;
+}
+
+.menu-burger span:nth-child(3) {
+    top: 0.8rem;
+}
+
+.menu-burger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 0.4rem;
+}
+
+.menu-burger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 0.4rem;
 }
 
 @media (max-width: 768px) {
@@ -134,15 +166,14 @@ body {
     }
 
     .menu {
-        display: none;
         position: fixed;
         top: 0;
-        right: 0;
-        width: 250px;
+        left: 0;
+        width: 100%;
         height: 100vh;
         background-color: rgba(237, 231, 219, 0.95); /* Couleur de fond légèrement transparente */
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Ombre pour le côté gauche */
-        padding-top: 2rem;
+        padding-top: 4rem;
         transform: translateX(100%); /* Positionne le menu en dehors de l'écran */
         transition: transform 0.3s ease; /* Animation de glissement */
         z-index: 4;
@@ -162,7 +193,7 @@ body {
     .menu a {
         text-decoration: none;
         font-family: Avenir-UltraLight;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: black;
     }
 
@@ -172,11 +203,9 @@ body {
 
     /* Classe pour afficher le menu latéral */
     .menu.open {
-        display: block;
         transform: translateX(0); /* Fait glisser le menu sur l'écran */
     }
 }
-
 
 /* ---- Logo ---- */
 
