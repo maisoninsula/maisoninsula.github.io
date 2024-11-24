@@ -1,5 +1,5 @@
 let currentIndex = 0;
-const images = document.querySelectorAll('.slider-image');
+const images = document.querySelectorAll('.slider-wrapper .slider-image');
 
 function showImage(index) {
     images.forEach((img, i) => {

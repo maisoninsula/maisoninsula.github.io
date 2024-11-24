@@ -214,6 +214,48 @@
         position: relative; /* Permet au logo de suivre le flux de la page */
         display: flex;
         justify-content: center;
-        padding-top: 4rem;
+        margin-top: 7rem;
+    }
+}
+
+/* ---- Lien vers le projet suivant ---- */
+
+.next-project-wrapper a {
+    font-family: Avenir-UltraLight;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+/* Effet au survol */
+.next-project-wrapper a:hover {
+    color: black;
+}
+
+/* Positionnement sur desktop */
+@media (min-width: 769px) {
+    .next-project-wrapper {
+        position: fixed;
+        bottom: 3rem; /* Espace au-dessus du slider */
+        right: 3rem; /* Espace à droite */
+        z-index: 10; /* Assure que le lien reste au-dessus des autres éléments */
+    }
+
+    .next-project-wrapper a {
+        font-family: Avenir-UltraLight;
+        font-size: 1.6rem;
+    }
+}
+
+/* Positionnement sur mobile */
+@media (max-width: 768px) {
+    .next-project-wrapper {
+        position: relative; /* Fait partie de la scrollView */
+        display: flex;
+        justify-content: center;
+        text-align: center; /* Centré horizontalement */
+        padding-top: 1rem;
     }
 }

@@ -2,30 +2,38 @@ import os
 import re
 
 def generate_projects_html(projects_directory, template_file="projects/template_projects.html", output_file="projects.html"):
+    # Charger le template pour projects.html
     with open(template_file, "r", encoding="utf-8") as f:
         template_html = f.read()
 
     projects_content = ""
     project_folders = sorted(os.listdir(projects_directory), reverse=True)
 
+    # Préparer une liste pour gérer la logique de bouclage
+    projects = []
     for project_folder in project_folders:
-        project_path = os.path.join(projects_directory, project_folder)
-
-        if os.path.isdir(project_path):
+        if os.path.isdir(os.path.join(projects_directory, project_folder)):
             title = project_folder.split('.', 1)[-1].replace('-', ' ')
             formatted_title = re.sub(r'\s+', '-', title.lower())
             formatted_title = re.sub(r'[^\w\-]', '', formatted_title)
-            image_path = os.path.join(project_path, "01.jpg")
+            projects.append({"folder": project_folder, "title": title, "url": f"{formatted_title}.html"})
 
-            if os.path.exists(image_path):
-                projects_content += f"""
-        <a href="{formatted_title}.html" class="project" id="{project_folder}">
-            <p class="project-title" style="text-align: center;">{title}</p>
-            <img src="{os.path.join('projects', project_folder, '01.jpg')}" alt="{title}" class="project-image">
+    # Boucle pour générer chaque projet
+    for i, project in enumerate(projects):
+        project_path = os.path.join(projects_directory, project["folder"])
+        next_project = projects[(i + 1) % len(projects)]  # Boucle vers le premier projet
+        image_path = os.path.join(project_path, "01.jpg")
+
+        if os.path.exists(image_path):
+            projects_content += f"""
+        <a href="{project['url']}" class="project" id="{project['folder']}">
+            <p class="project-title" style="text-align: center;">{project['title']}</p>
+            <img src="{os.path.join('projects', project['folder'], '01.jpg')}" alt="{project['title']}" class="project-image">
         </a>
-                """
-                generate_project_page(project_path, formatted_title, title)
+            """
+            generate_project_page(project_path, project["url"].replace(".html", ""), project["title"], next_project)
 
+    # Remplacer le contenu dynamique dans projects.html
     final_html = template_html.replace("{{ projects_content }}", projects_content)
 
     with open(output_file, "w", encoding="utf-8") as f:
@@ -33,40 +41,47 @@ def generate_projects_html(projects_directory, template_file="projects/template_
 
     print(f"{output_file} généré avec succès.")
 
-def generate_project_page(project_path, formatted_title, title, template_file="projects/template_project.html"):
-    # Lire le template de la page de projet
+def generate_project_page(project_path, formatted_title, title, next_project):
+    template_file = "projects/template_project.html"
+
+    # Charger le template
     with open(template_file, "r", encoding="utf-8") as f:
         template_html = f.read()
 
+    # Récupérer le contenu du fichier description.txt
     description_file = os.path.join(project_path, "description.txt")
     description = ""
-
     if os.path.exists(description_file):
         with open(description_file, "r", encoding="utf-8") as f:
             description = f.read().strip()
 
-    valid_extensions = {".jpg", ".jpeg", ".png", ".gif"}
+    # Récupérer les images
     images = [
-        img for img in sorted(os.listdir(project_path))
-        if os.path.splitext(img)[1].lower() in valid_extensions
+        file_name for file_name in os.listdir(project_path)
+        if file_name.lower().endswith((".jpg", ".jpeg", ".png", ".gif"))
     ]
-
-    slider_images_html = "\n".join(
-        f'<img src="{os.path.join("projects", os.path.basename(project_path), img)}" alt="Image {i+1}" class="slider-image{" active" if i == 0 else ""}" onclick="openLightbox({i})">'
-        for i, img in enumerate(images)
+    slider_images = "\n".join(
+        f'<img src="{os.path.join("projects", os.path.basename(project_path), image)}" alt="Image {i + 1}" class="slider-image{" active" if i == 0 else ""}" onclick="openLightbox({i})">'
+        for i, image in enumerate(sorted(images))
     )
 
-    # Remplacer les marqueurs dans le template par les données spécifiques au projet
-    project_html = template_html
-    project_html = project_html.replace("{{ project_title }}", title.capitalize())
-    project_html = project_html.replace("{{ project_description }}", description)
-    project_html = project_html.replace("{{ slider_images }}", slider_images_html)
+    # Lien vers le projet suivant
+    next_project_html = f'<a href="{next_project["url"]}" class="next-project-link">Projet suivant</a>'
 
-    project_file = f"{formatted_title}.html"
-    with open(project_file, "w", encoding="utf-8") as f:
-        f.write(project_html)
+    # Remplacer les variables dans le template
+    final_html = template_html.replace("{{ project_title }}", title.capitalize())
+    final_html = final_html.replace("{{ project_description }}", description)
+    final_html = final_html.replace("{{ slider_images }}", slider_images)
+    final_html = final_html.replace("{{ next_project_link }}", next_project_html)
 
-    print(f"{project_file} généré avec succès.")
+    # Nom du fichier HTML pour le projet
+    output_file = f"{formatted_title}.html"
+
+    # Sauvegarder le fichier
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(final_html)
+
+    print(f"{output_file} généré avec succès.")
 
 def generate_about_html(about_directory, template_file="about/template_about.html", output_file="about.html"):
     # Lecture du fichier template pour about.html
