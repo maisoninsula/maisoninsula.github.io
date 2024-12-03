@@ -1,8 +1,8 @@
-Localisation: Paris 19eme
+<b>Localisation:</b> Paris 19eme
 <br>
-Surface: 25m2
+<b>Surface:</b> 25m2
 <br>
-Client: Privé
+<b>Client:</b> Privé
 <br><br>
 Pour cet appartement de 25m², l’ensemble de l’espace a été entièrement purgé et repensé, offrant une base saine pour un nouveau départ.
 <br>

@@ -1,8 +1,8 @@
-Localisation: Saint Etienne
+<b>Localisation:</b> Saint Etienne
 <br>
-Surface: 100m2
+<b>Surface:</b> 100m2
 <br>
-Client: Privé
+<b>Client:</b> Privé
 <br><br>
 Ce projet de réaménagement visait à optimiser l’espace en ajoutant une seconde salle de bain, une buanderie et une suite parentale.
 <br>

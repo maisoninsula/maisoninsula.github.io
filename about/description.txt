@@ -1,5 +1,5 @@
-<b>Bienvenue chez Maison Insula</b>
-<br><br>
+<h1>Bienvenue chez Maison Insula</h1>
+<br>
 Maison Insula est née d’une approche de l’architecture intérieure, centrée sur l’écoute et l’empathie.
 <br>
 Le choix de ce nom rend hommage au cortex insulaire, partie du cerveau où naissent l’intuition et l’empathie, des qualités essentielles qui guident notre travail.
@@ -10,9 +10,8 @@ Notre objectif est de concevoir des intérieurs qui résonnent profondément ave
 <br><br>
 Découvrez comment Maison Insula peut donner vie à votre espace, en le façonnant à votre image.
 <br><br>
-<br><br>
-<b>À propos de moi</b>
-<br><br>
+<h1>À propos de moi</h1>
+<br>
 Formée pendant cinq ans à l’école Ensaama Olivier de Serres à Paris (Master 2), j’ai eu la chance d’apprendre dans un cadre d’excellence, entourée de passionnés de design et d’architecture.
 <br>
 Après huit années passées au sein d’agences parisiennes comme Ciguë et Franklin Azzi Architecture, j’ai décidé de mettre mon expérience et mon savoir-faire au service de mes propres clients.

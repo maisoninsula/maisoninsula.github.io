@@ -1,8 +1,8 @@
-Localisation: Paris 11eme
+<b>Localisation:</b> Paris 11eme
 <br>
-Surface: 45m2
+<b>Surface:</b> 45m2
 <br>
-Client: Privé
+<b>Client:</b> Privé
 <br><br>
 Ce projet consistait à repenser entièrement un appartement de 45m², en modifiant les circulations, l’emplacement des cloisons et des zones humides.
 <br>

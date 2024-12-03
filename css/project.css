@@ -214,14 +214,14 @@
         position: relative; /* Permet au logo de suivre le flux de la page */
         display: flex;
         justify-content: center;
-        margin-top: 7rem;
+        margin-top: 8rem;
     }
 }
 
 /* ---- Lien vers le projet suivant ---- */
 
 .next-project-wrapper a {
-    font-family: Avenir-UltraLight;
+    font-family: Avenir-Regular;
     font-size: 1.2rem;
     text-align: center;
     text-decoration: none;
@@ -244,7 +244,6 @@
     }
 
     .next-project-wrapper a {
-        font-family: Avenir-UltraLight;
         font-size: 1.6rem;
     }
 }
@@ -256,6 +255,6 @@
         display: flex;
         justify-content: center;
         text-align: center; /* Centré horizontalement */
-        padding-top: 1rem;
+        padding-top: 2rem;
     }
 }
