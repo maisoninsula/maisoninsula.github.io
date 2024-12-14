@@ -62,6 +62,10 @@
     cursor: pointer;
 }
 
+.project-slider .slider-arrow:hover {
+    color: rgba(0, 0, 0, 0.3);
+}
+
 /* Lightbox overlay */
 .lightbox {
     display: none; /* Masqué par défaut */
@@ -86,6 +90,14 @@
     align-items: center;
 }
 
+.lightbox-content .next-project-wrapper a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.lightbox-content .next-project-wrapper a:hover {
+    color: rgba(255, 255, 255, 0.3);
+}
+
 /* Image du lightbox ajustée */
 .lightbox-image {
     width: auto;
@@ -106,6 +118,10 @@
     cursor: pointer;
 }
 
+.close-lightbox:hover {
+    color: rgba(255, 255, 255, 0.3);
+}
+
 /* Flèches de navigation dans le lightbox */
 .lightbox-controls {
     position: absolute;
@@ -121,6 +137,10 @@
     color: rgba(255, 255, 255, 0.5);
     padding: 1rem;
     cursor: pointer;
+}
+
+.lightbox-controls .slider-arrow:hover {
+    color: rgba(255, 255, 255, 0.3);
 }
 
 @media (min-width: 769px) {
@@ -230,8 +250,9 @@
 }
 
 /* Effet au survol */
-.next-project-wrapper a:hover {
+.content .next-project-wrapper a:hover {
     color: black;
+    opacity: 0.5;
 }
 
 /* Positionnement sur desktop */
