@@ -33,6 +33,10 @@ body {
     background-color: #EDE7DB;
 }
 
+a {
+    color: black;
+}
+
 .page-wrapper {
     display: flex;
     justify-content: center;
